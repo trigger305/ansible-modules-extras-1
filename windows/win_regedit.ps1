@@ -75,7 +75,7 @@ Function Compare-RegistryData {
         [AllowEmptyString()]$DifferenceData
         )
 
-        if ($ReferenceData -is [String] -or $ReferenceData -is [int]) {
+        if ($ReferenceData -is [String] -or $ReferenceData -is [int] -or $ReferenceData -is [uint32]) {
             if ($ReferenceData -eq $DifferenceData) {
                 return $true
             } else {
