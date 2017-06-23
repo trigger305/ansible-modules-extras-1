@@ -82,7 +82,7 @@ Function Compare-RegistryData {
                 return $false
             }
         } elseif ($ReferenceData -is [Object[]]) {
-            if (@(Compare-Object $ReferenceData $DifferenceData -SyncWindow 0).Length -eq 0) {
+            if (@(Compare-Object $ReferenceData $DifferenceData -SyncWindow 0).Length -eq 0 -or $ReferenceData -is [uint32]) {
                 return $true
             } else {
                 return $false
